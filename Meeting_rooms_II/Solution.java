@@ -1,9 +1,6 @@
 package Facebook.Meeting_rooms_II;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.PriorityQueue;
+import java.util.*;
 
 //array sort the Interval with their start time
 //after the sort, if element1.end<element2.start, then we can merge those interval,
@@ -37,7 +34,6 @@ public class Solution {
      public class Interval {
       int start;
       int end;
-      Interval() { start = 0; end = 0; }
       Interval(int s, int e) { start = s; end = e; }
   }
 }
