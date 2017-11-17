@@ -14,6 +14,7 @@ public class Solution {
 // assumption: 1. * cannot be the first letter
 
 //dp1: 这个比较好讲
+
     //dp[i][j]: means from 0 to i from string s and 0 to j from pattern p are matched or not
 //    1, If p.charAt(j) == s.charAt(i) :  dp[i][j] = dp[i-1][j-1];
 //    2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
@@ -25,6 +26,9 @@ public class Solution {
 //                  or dp[i][j] = dp[i][j-1]   // in this case, a* counts as single a
 //                  or dp[i][j] = dp[i][j-2]   // in this case, a* counts as empty
 
+
+//time complexity O(n*m)
+//space complexity O(n*m)
 
     public boolean isMatch_1(String s, String p)
     {
@@ -58,12 +62,12 @@ public class Solution {
                     //if we find a *
                     if(p.charAt(j-1)!=s.charAt(i)&&p.charAt(j-1)!='.')
                     {
-                        //* match zero element
+                        //因为*之前的character和s的character不match的话，那么*只能 match zero element
                         dp[i+1][j+1]=dp[i+1][j-1];
                     }
                     else{
-                        //
-                        dp[i+1][j+1] = (dp[i+1][j]||dp[i][j+1]||dp[i+1][j-1]);
+                        //如果*之前的character和s的character match的话，那么有三种选择
+                        dp[i+1][j+1] = (dp[i+1][j]||dp[i][j+1]||dp[i+1][j-1]||dp[i+1][j-1]);
                     }
                 }
             }

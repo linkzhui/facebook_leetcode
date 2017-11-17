@@ -28,6 +28,7 @@ public class Solution {
             {
                 if(dp[j] && set.contains(s.substring(j,i+1)))
                 {
+                    //这里为什么要i+1，因为i 是current string的right boundary index, we need i+1 for substring
                     dp[i+1] = true;
                     break;
                 }
