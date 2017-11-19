@@ -10,7 +10,7 @@ package Facebook.Intersection_of_two_arrays_349;
 
 
 //Solution 2: use binary search, go though the shorter one, do binary search in the longer one, but we need to sort the array first
-//time complex: O(nlogm + nlogn + mlogm) : the n is smaller length of array, m is longer length of array
+//time complex: O(nlogm +   nlogn + mlogm) 后面两个是sort array的时间 : the n is smaller length of array, m is longer length of array,
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;

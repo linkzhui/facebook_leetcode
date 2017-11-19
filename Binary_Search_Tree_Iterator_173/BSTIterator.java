@@ -6,6 +6,24 @@ import Facebook.TreeNode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+//we will using inorder tree traversal to go through the tree.
+//when we initial a iterator, we will find the smallest number of node first, and store this node to next(we need a variable to store next)
+//the next method will return next,
+
+// has next method,
+// we will check if next is null, if it is null, we will check stack, if stack is null, we return false.
+// if stack is not null, we pop the element from the stack, push this node's right child into stack, then keep looping to find next
+// most smallest element in the stack.
+
+//inorder tree traversal order:
+//1) Create an empty stack S.
+//2) Initialize current node as root
+//3) Push the current node to S and set current = current->left until current is NULL
+//4) If current is NULL and stack is not empty then
+//a) Pop the top item from stack.
+//b) Print the popped item, set current = popped_item->right
+//c) Go to step 3.
+//5) If current is NULL and stack is empty then we are done.
 public class BSTIterator {
 
     TreeNode root;

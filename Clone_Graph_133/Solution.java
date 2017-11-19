@@ -11,7 +11,8 @@ class UndirectedGraphNode {
 
 //step 1: we need a hashmap, the key of the hashmap is original graph node, the value is cloned graph node
 //step 2: iterative the original graph node's neighboor, if the neighboor is not exist in hashmap, we clone this graph node
-
+//time complexity: O(n+v)
+//space complexity: O(n)
 public class Solution {
 
     //iterative
