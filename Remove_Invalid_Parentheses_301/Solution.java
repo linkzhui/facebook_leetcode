@@ -8,7 +8,7 @@ import java.util.Set;
 
 //better solution:
 //key to make sure the a string is valid parenthesis, the left parentheses will equal to right parentheses.
-//we use counter, when we meet a left parentheses, we increase the counter by 1, then we decrease the counter by 1
+//we use counter, when we meet a left parentheses, we increase the counter by 1, if right parenthese then we decrease the counter by 1
 //if we find a unpaired right parenthesis, begin from last remove element index to find a possible solution to remove the right parenthesis
 //then we keep recursion the rest of string.
 
@@ -21,9 +21,9 @@ class Solution1{
         return ans;
     }
 
-    public void remove(String s, List<String> ans, int last_i, int last_j,  char[] par) {
+    public void remove(String s, List<String> ans, int cur_index, int last_remove_index,  char[] par) {
         int counter = 0;
-        for (int i = last_i; i < s.length(); ++i) {
+        for (int i = cur_index; i < s.length(); ++i) {
             if (s.charAt(i) == par[0])
             {
                 counter++;
@@ -35,9 +35,9 @@ class Solution1{
             if (counter<0){
                 //we find a unpaired right parenthesis, therefore we need to find a place to remove it, the removed index should between last removed index and current index,
 
-                for (int j = last_j; j <= i; ++j)
+                for (int j = last_remove_index; j <= i; ++j)
                 {
-                    if (s.charAt(j) == par[1] && (j == last_j || s.charAt(j - 1) != par[1]))
+                    if (s.charAt(j) == par[1] && (j == last_remove_index || s.charAt(j - 1) != par[1]))
                     {
                         //s.charAt(j - 1) != par[1] is avoid the duplicated result, if there is consecutive right parenthesis, we only delete the first right parenthesis.
                         remove(s.substring(0, j) + s.substring(j + 1, s.length()), ans, i, j, par);

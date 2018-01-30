@@ -86,7 +86,7 @@ public class Solution {
     //we use hashmap to record each task, and taks' frequency
 
     //then we use iterator to go through the hashmap, to find the max frequency's task, and how many tasks also have max frequency's
-    //(maxFrequency - 1) * (cooldown + 1) + countOfMax;
+    //(maxFrequency - 1) * (cooldown + 1) + how many elements also have same max frequency
     private static int taskSchedule3(int[] tasks, int cooldown) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int task : tasks)

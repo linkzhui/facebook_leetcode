@@ -9,6 +9,7 @@ package Facebook.Valid_Number_65;
 // 6. e cannot exist twice
 // 7. -1 or +1 is that available?
 // 8. 123 e -10, is that available?
+
 public class Solution {
     public boolean isNumber(String s)
     {

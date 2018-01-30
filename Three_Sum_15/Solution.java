@@ -21,13 +21,17 @@ import java.util.List;
 
 
 //use two pointer
+
 //sort the array first (if array is unsorted)
 //then go through the whole array, because the array is sort,
 // therefore if we choose the value of current index in the array as lowest number in the potential list
 //then we do two sum search between current index +1 to end of the array,
 //the possible result is only exist between current index +1 to end of the array
 //inorder to avoid the duplicate case(if have duplicate element in the array)
-//we always check the nearby values
+//we always check if the previous values is same with current value
+
+//time complexity: O(n^2+nlongn)
+//space complexity: O(n^2)
 public class Solution {
     public static void main(String[] args)
     {
@@ -42,6 +46,7 @@ public class Solution {
         {
             if(i>0 && nums[i]==nums[i-1])
             {
+                //avoid duplicated result
                 continue;
             }
 
@@ -55,10 +60,12 @@ public class Solution {
                     List<Integer> child_list = new LinkedList<>(Arrays.asList(number));
                     while(low<high && nums[low] == nums[low+1])
                     {
+                        //avoid the duplicated result
                         low++;
                     }
                     while(low<high && nums[high] == nums[high-1])
                     {
+                        //avoid the duplicated result
                         high--;
                     }
                     result.add(child_list);

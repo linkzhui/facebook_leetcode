@@ -7,7 +7,7 @@ import java.util.List;
 //for level 0, we expand current node to generate
 //recursive down,
 //when index == input.string length, return
-//time complex:(O(digitis.length())*how many character in that digits)
+//time complex:( how many character in that digits ^ digitis.length())
 //space complex:O(n)
 public class Solution {
     public static void main(String[] args)

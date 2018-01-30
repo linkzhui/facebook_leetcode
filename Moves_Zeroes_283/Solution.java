@@ -2,9 +2,13 @@ package Facebook.Moves_Zeroes_283;
 
 //Two pointer,
 // time complexity: O(n)
-//we need to pointer, the current pointer means the current index, the start pointer means //the result from 0 to start (not include from start) are all zero,
-//when we see a unzero element, we move the element to start pointer, then the cur pointer and start pointer both move 1
-//if it is a unzero element, we only move the current pointer
+//we need to pointer, we name one point current and one point start
+// cur: the current index,
+// start: all the element from 0 to start (exclude from start) are nonzeros,
+
+//then we go through the array from index 0, if current element is nonzeros, we replace start index value with current element (nums[start++] = nums[cur++])
+//if current element is zeros, we keep move current pointer.
+//after
 public class Solution {
     public void moveZeroes(int[] nums) {
         if(nums==null || nums.length==0)
@@ -19,10 +23,10 @@ public class Solution {
         {
             if(nums[cur]!=0)
             {
-                nums[start++] = nums[cur];
+                nums[start++] = nums[cur++];
             }
-            cur++;
         }
+
         while(start<nums.length)
         {
             nums[start++] = 0;

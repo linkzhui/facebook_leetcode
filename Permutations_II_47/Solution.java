@@ -30,11 +30,15 @@ public class Solution {
     //132
     private void helper(int cur, Set<List<Integer>> set, ArrayList<Integer> nums, List<List<Integer>> result)
     {
+        //index (var cur) is the current level er are trying.
         if(cur == nums.size())
         {
             ArrayList<Integer> part_result = new ArrayList<>(nums);
             result.add(part_result);
         }
+
+
+        //put each letter in the index-th position of the input str
         for(int i = cur;i<nums.size();i++)
         {
             swap(nums,cur,i);

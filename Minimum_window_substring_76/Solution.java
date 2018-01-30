@@ -1,7 +1,7 @@
 package Facebook.Minimum_window_substring_76;
 
 //rule 1: the frequency of each character in T exist must equal or greater then those character's exist frequency in S
-//rule 2: the first character of substring's exist frequency in S must have same exist frequency in T, for the same letter
+//rule 2: the first character of substring's exist frequency in S must have same frequency in T, for the same letter
 
 import java.util.Arrays;
 
